@@ -1,0 +1,27 @@
+spring:
+  jackson:
+    serialization:
+       INDENT_OUTPUT: true
+  datasource:
+    url: "jdbc:oracle:thin:@localhost:1521:orcl"
+    username: SECURITY
+    password: 14292
+    driver-class-name: oracle.jdbc.OracleDriver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+    initialization-mode: never
+
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: validate
+
+security:
+  jwt:
+    key-store: classpath:jwt.jks
+    key-store-password: 14292Oop
+    key-pair-alias: springblog
+    key-pair-password: 14292Oop
